@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome" id="nome" />
+            <button class="botao">Adicionar</button>
+        </div>
+        <script>
+            //document -> varaivel para o DOM
+            
+            //var inputElement = document.getElementById("nome"); //Busca por ID
+            
+            //var inputElementArray = document.getElementsByTagName("input"); //Busca por Tag e sempre retorna um vetor
+            //var inputElement = inputElementArray[0];
+
+            var inputElement = document.querySelector("input[name=nome]"); //Busca por propriedades
+            var btnElement = document.querySelector("button.botao"); 
+            
+            btnElement.onclick =  function(){
+                
+                var text = inputElement.value; //Recupera o valor do texto
+                alert(text);
+            };
+        </script>
+    </body>
+</html>
