@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <button id="btnAddBox">Adiciona Box</button>
+            <div id="boxes"></div>
+        </div>
+
+        <script>
+            //Recupera elementos
+            var boxesElement = document.getElementById("boxes"); //Boxes
+            var btnAddBoxElemento = document.getElementById("btnAddBox"); //Botão
+
+        
+            //função para adicionar novas boxes
+            function addNovoBotao(){
+
+                //cria o elemento box usando a tag div
+                var boxElement = document.createElement("div");
+                boxElement.setAttribute("class", "box");
+                boxElement.style.width = "100px";
+                boxElement.style.height = "100px";
+                boxElement.style.backgroundColor = "#f00"
+
+                //Adiciona elemento na tela
+                boxesElement.appendChild(boxElement);
+            }
+
+            
+            //Define a função de adicionar boxes
+            btnAddBoxElemento.onclick = addNovoBotao;
+
+            
+
+            //Modifica o estilo
+            //boxElement.style.width = "100px";
+            //boxElement.style.height = "100px";
+            //boxElement.style.backgroundColor = "#f00";
+
+        </script>
+    </body>
+</html>

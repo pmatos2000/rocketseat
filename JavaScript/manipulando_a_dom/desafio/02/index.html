@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <button id="btnAddBox">Adiciona Box</button>
+            <div id="boxes"></div>
+        </div>
+
+        <script>
+            //Recupera elementos
+            var boxesElement = document.getElementById("boxes"); //Boxes
+            var btnAddBoxElemento = document.getElementById("btnAddBox"); //Botão
+
+        
+            //Função que retorna uma cor aleatoria
+            function getRandomColor(){
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++){
+                    color += letters[Math.floor(Math.random() * 16)];
+                } 
+                return color;
+            }
+
+            //Função para mudar a cor
+            function setRandomColor(el){
+                var novaCor = getRandomColor();
+                el.style.backgroundColor = novaCor;
+            }
+            
+            
+            //função para adicionar novas boxes
+            function addNovoBotao(){
+
+                //cria o elemento box usando a tag div
+                var boxElement = document.createElement("div");
+                boxElement.setAttribute("class", "box");
+                boxElement.style.width = "100px";
+                boxElement.style.height = "100px";
+                boxElement.style.backgroundColor = "#f00"
+
+                //Modifica a cor ao passar o mouse por cima
+                boxElement.onmousemove = function(){
+                    setRandomColor(boxElement);
+                };
+
+                //Adiciona elemento na tela
+                boxesElement.appendChild(boxElement);
+            }
+
+            
+
+            //Define a função de adicionar boxes
+            btnAddBoxElemento.onclick = addNovoBotao;
+
+            
+
+            //Modifica o estilo
+            //boxElement.style.width = "100px";
+            //boxElement.style.height = "100px";
+            //boxElement.style.backgroundColor = "#f00";
+
+        </script>
+    </body>
+</html>
