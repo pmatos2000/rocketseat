@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input id="nome"/>
+        </div>
+        <script>
+            //<a href="https://rocketseat.com.br/">Acessar  site da Rocket</a>
+            
+            //Cria o elemento "link"
+            var linkElement = document.createElement("a");
+            linkElement.setAttribute("href", "https://rocketseat.com.br/");
+            linkElement.setAttribute("title", "Site da Rocket")
+            
+            //Cria o texto (elemento filho)
+            var textElement = document.createTextNode("Acessar  site da Rocket");
+            linkElement.appendChild(textElement);
+
+            //Adiciona na DOM
+            var containerElement = document.querySelector("#app");
+            containerElement.appendChild(linkElement);
+
+            //Remove elemento
+            var inputElement = document.querySelector("#nome");
+            containerElement.removeChild(inputElement);
+
+
+        </script>
+    </body>
+</html>
