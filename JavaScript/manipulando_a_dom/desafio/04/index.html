@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Adicionar</button>
+            <ul id="listaNomes"></ul>
+        </div>
+
+        <script>
+            //Recupera elementos
+            var listaNomesElement = document.getElementById("listaNomes"); 
+            var inputElement  = document.getElementsByTagName("input")[0];
+            var btnAddElement = document.getElementsByTagName("button")[0];
+            console.log(btnAddElement);
+
+        
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            //Adiciona nome a tela
+            function adicionaNome(nome){
+                var itemElement = document.createElement("li");
+                var textoElement = document.createTextNode(nome);
+                itemElement.appendChild(textoElement);
+                listaNomesElement.appendChild(itemElement);
+            }
+
+            //Adiciona os nomes da variavel
+            for(nome of nomes){
+                adicionaNome(nome);
+            }    
+
+            //Adiciona um nome da entrada
+            function adicionar(){
+                var nome = inputElement.value;
+                nomes.push(nome);
+                adicionaNome(nome);
+                inputElement.value = "";
+            }
+
+
+
+        </script>
+    </body>
+</html>
