@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import api from "../../services/api"
 
+import "./styles.css"
+
 class Main extends Component {
 
     state = {
@@ -20,7 +22,11 @@ class Main extends Component {
         return(
             <div className="product-list">
                 { this.state.products.map( (product) => (
-                    <h2 key={product._id}>{product.title}</h2>
+                    <article key={product._id}>
+                        <strong>{product.title}</strong>
+                        <p>{product.description}</p>
+                        <a href="">Acessar</a>
+                    </article>
                 )) }
             </div>
         )
