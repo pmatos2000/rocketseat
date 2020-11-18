@@ -3,6 +3,7 @@ import React,  { Component } from 'react'
 import "./styles.css";
 
 import Header from "./components/header"
+import Main from "./pages/main"
 
 class App extends Component{
   
@@ -10,6 +11,7 @@ class App extends Component{
     return (
       <div className="App">
         <Header />
+        <Main />
       </div>
     )
   }
