@@ -64,6 +64,10 @@
 }
 
 
-.product-list .actions button:hover[not disabled]{
+.product-list .actions button:hover{
     opacity: 0.7;
+}
+
+.product-list .actions button:hover[disabled]{
+    opacity: 0.3;
 }
